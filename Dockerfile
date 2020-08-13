@@ -96,5 +96,12 @@ WORKDIR /opt/graphmap
 RUN make modules && make
 WORKDIR /
 
+#Guppy v0.3.0
+WORKDIR /opt
+RUN wget https://mirror.oxfordnanoportal.com/software/analysis/ont-guppy-cpu_3.0.3_linux64.tar.gz
+RUN tar -xf ont-guppy-cpu_3.0.3_linux64.tar.gz
+RUN rm ont-guppy-cpu_3.0.3_linux64.tar.gz
+WORKDIR /
+
 #set path
-ENV PATH $PATH:/opt:/opt/CCBGpipe/CCBGpipe:/opt/samtools-1.7/bin:/opt/bwa:/opt/nanopolish:/opt/canu-1.6/Linux-amd64/bin:/opt/MUMmer3.23:/opt/minimap2-2.10_x64-linux/:/opt/miniasm-0.2:/opt/racon-v1.1.1/bin:/opt/graphmap/bin/Linux-x64
+ENV PATH $PATH:/opt:/opt/CCBGpipe/CCBGpipe:/opt/samtools-1.7/bin:/opt/bwa:/opt/nanopolish:/opt/canu-1.6/Linux-amd64/bin:/opt/MUMmer3.23:/opt/minimap2-2.10_x64-linux/:/opt/miniasm-0.2:/opt/racon-v1.1.1/bin:/opt/graphmap/bin/Linux-x64:/opt/ont-guppy-cpu
